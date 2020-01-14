@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 정보 관리 페이지</title>
+    <style>
+        body {
+            background-color: SlateGray;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center" style="color:navy; font-size:40px;"> 회원 관리 페이지 <h1>
+    {% if "USERNAME" in session %}
+    <p align="center" style="color:purple; font-size:25px;">현재 로그인한 회원 : {{ session.get("USERNAME") }} </p> <hr>
+    {% else %}
+    <p align="center" style="color:purple; font-size:25px;">현재 로그인한 회원 : 없음 </p> <hr>
+    {% endif %}
+    <div align="center">
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/member_info_register/'">회원 등록</button> <hr>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/member_info_search/'">회원 정보 조회</button> <hr>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/member_info_delete/'">회원 삭제</button> <hr>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/member_info_login/'">로그인</button> <hr>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/member_info_logout/'">로그아웃</button> <hr>
+
+    </div>
+</body>
+</html>

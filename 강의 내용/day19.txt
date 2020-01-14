@@ -1,0 +1,21 @@
+※ Django
+
+- 설치 : pip install django
+
+- 프로젝트 생성 : django-admin.exe startproject myproj
+
+- 프로젝트 실행 :	django-amdin.exe startapp polls
+		manage.py migrate (설정값 초기화? 자동설정?)
+		python manage.py runserver 0.0.0.0:8000 (서버 실행)
+
+* Django와 Flask의 구조 차이
+
+- Flask : MVC
+	M(odel) - 데이터베이스
+	V(iew) - html. css. javasript.
+	C(ontroller) - .py파일
+
+- Django : MVT
+	M(odel) - 데이터베이스
+	V(iew) - 컨트롤러(코드) .py파일
+	T(emplate) - html. css. javascript

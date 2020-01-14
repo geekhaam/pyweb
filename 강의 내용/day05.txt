@@ -1,0 +1,18 @@
+# URL 라우팅
+	홈페이지 접속시 '/'				=> member_info_con
+	회원정보 등록 페이지 '/member_info_register/'	=> member_info_reg_con
+	회원정보 출력 페이지 '/member_info_print/'	=> member_info_print_con
+	회원정보 검색 페이지 '/member_info_search/'	=> member_info_search_con
+
+# Function Names [컨트롤러]
+	member_info_con
+	member_info_reg_con
+	- 등록에 대한 응답 페이지 => member_info_reg_model.html
+	member_info_print_con
+	member_info_search_con
+
+# HTML pages (return) [뷰]
+	member_info_con.html
+	member_register.html
+	member_info_print.html
+	member_info_search.html

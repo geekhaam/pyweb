@@ -1,0 +1,45 @@
+<커리큘럼>
+
+* 웹개발의 기초를 위한 코딩과 데이터베이스 연습(XAMPP)
+- 웹서버 / 데이터베이스 / 개발언어 (apache + mysql + php)
+- 아주 쉬운 코딩 언어인 php + mysql 사용함.
+* 로우 레벨 제작기법(RAW-level)의 이해
+* 중간 레벨 제작기법(MID-level) - Class / SQLAlchemy
+* 고수준 레벨의 제작기법(Framework) - Flask / Django
+
+
+<웹개발에서 중요한 부분>
+
+@ 데이터베이스 (코딩 언어와는 아무 상관 없음, 웹서버와도 상관 없음)
+- SQL(데이터 저장/삭제/수정/검색)-CRUD
+- Create / Read / Update / Delete
+- Read --> SELECT 명령어
+@ 웹서버 (개발자와 상관 없음. 시스템 엔지니어쪽)
+@ 프론트앤드 / 백앤드 (개발자와 가장 밀접한 부분)
+- 프론트앤드 (html, css, java-script, jquery, node-js, vue-js)
+- 백앤드 (주목적: php, jsp, asp, node-js, python)
+- 코딩 언어와 데이터베이스를 연결해주는 API가 있다.
+  * Application Programming Interface (드라이버)
+  * 이걸 만드는 회사는 데이터베이스 쪽이다.
+
+※ VMware와 웹서버(Apache) 및 데이터베이스(Mysql) 충돌 있을 수 있으니\
+  작업관리자로 이전 프로세스들 종료하고  XAMPP 컨트롤 패널에서 실행할 것
+
+
+<데이터 베이스 접속>
+커맨드 창에서 XAMPP 디렉토리에서 \mysql\bin\ 디렉토리에서 mysql 접속 명령어 입력
+
+
+<SQL 문 - 기초>
+* 데이터베이스에 어떤 것들이 존재하는가? (일종의 폴더 같은 개념)
+* 어떤 데이터베이스로 들어갈 것인가? (폴더 이동)
+* 어떤 테이블들이 있는지 살펴본다. (엑셀의 시트같은 개념)
+* 그 테이블에 어떤 작업을 할 것인가? (CRUD)
+  - INSERT
+  - UPDATE
+  - SELECT
+  - DELETE
+
+
+<DB 백업>
+PHPMyAdmin 툴 통해서 내보내기/가져오기 기능 사용

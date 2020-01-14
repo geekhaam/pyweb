@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>글목록 페이지</title>
+</head>
+<body>
+<h1>글목록</h1>
+<table width="800" style="padding:5px 0 5px 0;">
+    <tr height="2" bgcolor="#FFC8C3"><td colspan="7"></td></tr>
+    <tr>
+        <td style="font-weight:bold;">번호</td>
+        <td style="font-weight:bold;">글쓴이</td>
+        <td style="font-weight:bold;">제목</td>
+        <td style="font-weight:bold;">내용</td>
+        <td style="font-weight:bold;">날짜</td>
+        <td style="font-weight:bold;">수정</td>
+        <td style="font-weight:bold;">삭제</td>
+    </tr>
+    <tr height="2" bgcolor="#FFC8C3"><td colspan="7"></td></tr>
+    {% for data in listData %}
+    <tr>
+        <td style="font-weight:bold;"> {{ data[2] }} </td>
+        <td> {{ data[3] }} </td>
+        <td onClick = "location.href='/read/?no={{data[2]}}'" style="cursor: pointer;" onmouseover="this.style.color='green'" onmouseout="this.style.color='black'"> {{ data[4] }} </td>
+        <td> {{ data[5] }}</td>
+        <td> {{ data[6] }} </td>
+        {% if data[0] == session["LOGINID"] %}
+            <td onClick="location.href='/update/?no={{data[2]}}'" style="cursor: pointer;" onmouseover="this.style.color='green'" onmouseout="this.style.color='black'">가능</td>
+        {% else %}
+            <td>불가능</td>
+        {% endif %}
+        {% if data[0] == session["LOGINID"] %}
+            <td onClick="location.href='/delete/?no={{data[2]}}'" style="cursor: pointer;" onmouseover="this.style.color='green'" onmouseout="this.style.color='black'">가능</td>
+        {% else %}
+            <td>불가능</td>
+        {% endif %}
+    </tr>
+    <tr height="2" bgcolor="#FFC8C3"><td colspan="7"></td></tr>
+    {% endfor %}
+</table>
+<form name="search" method="post" action="/search/"> 
+    <select name="searchTarget">
+        <option value="name">글쓴이</option>
+        <option value="title">글제목</option> 
+        <option value="content">글내용</option> 
+    </select>
+    검색 내용
+    <input type="text" name="searchData">
+    <input type="submit" value="검색">
+</form>
+{% if session|length %}
+    <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/write/'">글쓰기</button>
+    <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/logout/'">로그아웃</button>
+{% else %}
+    <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/login/'">로그인</button>
+{% endif %}
+</body>
+</html>

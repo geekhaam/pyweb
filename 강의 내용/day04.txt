@@ -1,0 +1,32 @@
+front-end (html) + back-end (python + mysql)
+
+1) html 작성 (회원가입페이지)
+- 이름, 주소, 이메일 입력 가능하도록 3개의 입력 상자(input type=text)
+- 전송 버튼(input type=submit)
+
+2) 보낸 데이터를 바다줄 파이썬 코드(함수)
+- def member_register
+
+3) 데이터를 저장해줄 곳 (mysql)
+- member_db의 member_t
+- membet_t의 구조 (회원번호/이름/주소/이메일)
+	회원번호 : 번호(고유번호):중복금지/자동으로 입력(auto_increment)
+	이름: 문자열(20글자)
+	주소/이메일: 문자열(50글자)
+
+
+* 프레임워크의 역할 (플라스크 / 장고)
+
+- 웹사이트를 제작할 때 프론트엔드와 백엔드(코드)를 연결해주는 역할(데이터 전달)
+- 데이터 전달은 두가지 방식(post / get)
+- 그 데이터들을 파이썬 코드에 전달해주는 것이 웹프레임워크의 역할 중 하나
+- 파이썬 내부에서는 함수라는 것을 이용해서 접근한다.(def)
+  함수 내부에서는 받아준 데이터를 처리해준다.
+
+
+** MVC 패턴이란?
+
+- 웹사이트로 작업시 필요한 것들 (데이터/코드/디자인)
+- 디자인 - 입력/출력 (HTML/CSS/JS)			-> templates 폴더
+- Controller : 코드 - Python/Node.js/JSP/PHP	-> 처리 방식
+- Model : 데이터 - Mysql/MSsql			-> 저장소

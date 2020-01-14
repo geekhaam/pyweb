@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>글읽기 페이지</title>
+</head>
+<body>
+<h1>글읽기</h1>
+    <form name="read" method="get">
+    <table width="400" style="padding:5px 0 5px 0; ">
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr>
+            <th width="50">글쓴이</th>
+            <td align="center">{{nameHtml}}</td>
+        </tr>
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr>
+            <th width="50">제목</th>
+            <td align="center">{{titleHtml}}</td>
+        </tr>
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr>
+            <th width="50" height="300">내용</th>
+            <td align="center">{{contentHtml}}</td>
+        </tr>
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+    </table>
+    <p>날짜 : {{dateHtml}}</p>
+    <p>조회수 : {{viewHtml}}</p>
+    </form>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/write/'">글쓰기</button>
+        <button type="button" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="location.href='/list/'">글목록</button>
+</body>
+</html>

@@ -1,0 +1,66 @@
+2019-12-27
+
+※ 게시판 프로젝트
+
+주요 기능 : CRUD (각각의 기능에 대응되는 페이지들을 분석함)
+
+1) 글읽기 : Read
+2) 글쓰기 : Create
+3) 글수정 : Update
+4) 글삭제 : Delete
+5) 글목록 : Read (list를 보여줌) -> 대량의 데이터를 검색함 (<table>태그 필요함)
+	* jinja2 엔진 for문이 필요함(반복적으로 <table>태그 출력)
+6) 로그인 페이지 : 세션이 필요함.
+	* 로그인을 했을 경우와 안 했을 경우의 화면의 차이점이 있다는 것이다.
+7) 부가적으로 프론트엔드 쪽 기술을 첨가할 수 있다.(jQuery)
+8) 데이터베이스 + 객체지향 (ORM)
+
+
+
+2019-12-30
+
+게시판 데이터(MODEL)
+gb_d -> gb_t (테이블)
+
+u_id -> char(20) #아이디
+u_pw -> char(20) #암호
+no -> int auto increment #글번호
+name -> char(20) #글쓴 사람
+title -> char(20) #글제목 
+content -> char(100) #글내용
+date -> datetime #글쓴 날짜 (자동으로)
+		-> 현재 날짜와 시간(default current_time)
+view -> int(11) #조회수 (글을 읽을 때마다 자동으로 코드에서 조회수를 올려줌)
+PRIMARY KEY(no, u_id) #중복되면 안 되는 것들 (2칸 이상일 경우 이렇게 쓴다.)
+
+
+폴더 위치	: /guestbook/
+접속 주소	: /write/
+컨트롤러	: /guestbook/gb_con.py
+페이지들	: write.html
+
+1. '글쓰기' 페이지 만들기
+	1) 사용자가 "http://localhost:5000/write/"로 접속하면 "write.html" 페이지 로딩된다.
+	2) "write.html" 페이지는 아래와 같은 기능을 가진다.
+		* 글쓴이
+		* 글제목
+		* 글내용
+		* 전송 버튼
+	3) 전송 버튼 기능은 "write_con" 함수가 담당한다.
+	   전송된 데이터를 받아서 cmd 창에 출력하면 된다.
+
+2. '글읽기' 페이지
+	1) 브라우저 "/read/"로 접속
+	2) 이 때, 읽고싶은 글의 번호를 넘겨줘야 한다.(GET)
+	3) 받아서 처리하는 담당은 "read_con"
+	4) "SELECT" 문으로 해당 글을 검색한다.
+	5) 검색된 글의 모든 정보를 HTML 페이지에 출력해준다.(render_template)
+	   출력페이지의 이름은 "read.html"이다.
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+- 검색했을 때 결과를 출력하는 방법
+
+1) 접속 -> 검색 -> 검색 결과 저장
+2) 저장된 것에서 한 줄을 뽑아낸다. (record라고 부름) - mysqli_fetch_array
+	$result = mysqli_fetch_array(검색결과)
+3) 뽑아낸 결과를 어딘가에 저장한다. (임시 변수) - $record
+4) 저장된 그 결과를 한 칸씩 출력한다. ($record['칸이름'])
+5) 출력할 때는 echo를 사용한다. (html을 같이 사용해도 된다.)
+
+
+- 파이썬에서 데이터베이스 관련 작업을 하는 방법
+1) 일단, 연결을 할 수 있는 드라이버가 필요하다.(커넥터) -> mysql connector (mysql.com 사이트에 있음)
+2) 설치한 후에 import mysql, mysql.connector 명령어 사용

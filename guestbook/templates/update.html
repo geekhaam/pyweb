@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>수정 페이지</title>
+</head>
+<body>
+<h1>글 수정</h1>
+<form name="update" method="post" action="/update/">
+    <table width="940" style="padding:5px 0 5px 0; ">
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr>
+            <th>글번호</th>
+            <td> <input type="test" name="no" value={{ noHtml }} readonly></td>
+        </tr>
+        <tr>
+            <th>글쓴이</th>
+            <td><input type="text" name="name" value={{ nameHtml }}></td>
+        </tr>
+        <tr>
+            <th>제목</th>
+            <td><input type="text" name="title" value={{ titleHtml }}></td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td><textarea type="text" name="content" minlength="4" malength="100" cols="40" rows="8">{{ contentHtml }}</textarea></td>
+        </tr>
+        <tr height="2" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" style="color: #fff; background:blue; font-size:1em; border-radius:0.5em; padding:5px 20px;" onclick="alert('수정 완료!');" value="수정">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
